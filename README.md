@@ -1,5 +1,5 @@
 # Inodoo - E-comerce customizado para segmento de mercado
 
-# Implementado estrutura base.
+# Implementando estrutura base.
 ## Bando de Dados
 > db (containers)
