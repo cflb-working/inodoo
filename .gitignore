@@ -1,2 +1,4 @@
 pgadmin/
 docker-compose.yml-old
+*-bkp
+extra/
