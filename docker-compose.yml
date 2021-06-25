@@ -1,6 +1,20 @@
 version: "3.1"
 
 services:
+
+    # Subindo stancia odoo
+    odoo-server:
+        build: ./odoo/13
+        ports:
+            - 80:8069
+        depends_on: 
+            - db_principal
+        environment: 
+            - HOST=db_principal
+            - USER=postgres_user
+            - PASSWORD=postgres_password
+
+    # Subindo instância do postgres
     db_principal:
         restart: always
         build: ./db/db_principal
