@@ -24,3 +24,13 @@ services:
             - 5432:5434
         env_file: 
             - "./db/db_principal/.db_principal.env"
+    
+    # PGAdmin
+    pgadmin:
+        build: ./db/pgadmin
+        ports: 
+            - "5051:5051"
+        env_file:
+            - "./db/pgadmin/.pg4.env"
+        links: 
+            - db_principal
