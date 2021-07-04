@@ -4,7 +4,7 @@ services:
 
     # Subindo stancia odoo
     odoo-server:
-        build: ./odoo/13
+        build: .
         ports:
             - 80:8069
         depends_on: 
