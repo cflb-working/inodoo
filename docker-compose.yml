@@ -13,6 +13,8 @@ services:
             - HOST=db_principal
             - USER=postgres_user
             - PASSWORD=postgres_password
+        links: 
+            - db_principal
 
     # Subindo instância do postgres
     db_principal:
