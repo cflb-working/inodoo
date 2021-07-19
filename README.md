@@ -1,8 +1,9 @@
-# Inodoo - E-comerce customizado para segmento de mercado
+# Inodoo - E-comerce customizado para segmento de mercado (Odoo 13.0 - l10n_brazil Trust Code)
 
 # Organizando os passos dados
 - Dockerfile base para o Odoo 
 - Download e Instalação do odoo-brazil trustcode
+- install iugu plugins de pagamento
 
 # Backups (bkp dir)
 ## Inicial backup
@@ -12,6 +13,7 @@
 - l10n_br
 - Modelo de faturamento Brasileiro
 - Tradução para Portugues do Brasil
+
 
 # Estrutura de Containers
 ## Bando de Dados
