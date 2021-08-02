@@ -7,10 +7,14 @@ RUN apt-get update && \
     apt-get install git vim python3 python3-pip xmlsec1 libffi-dev \
     python3-dev autoconf libtool wget zip \
     pkg-config build-essential libxmlsec1-dev libxmlsec1-openssl \
-    python3-dev gcc python3-venv python3-wheel -y
+    python3-dev gcc python3-venv python3-wheel -y && \
+    apt-get clean
+
+# REMOVENDO LINK PYTHON2
+RUN rm -rf /usr/bin/python && ln -s /usr/bin/python3 /usr/bin/python
+#RUN python3 -m pip install --user iugu mercadopago==1.1.1
 
 USER odoo
-
 WORKDIR /opt/odoo
 RUN wget https://github.com/Code-137/odoo-brasil/archive/refs/heads/13.0.zip
 RUN unzip 13.0.zip -d odoo13
@@ -22,6 +26,6 @@ RUN python3 -m pip install --upgrade pip setuptools wheel --no-warn-script-locat
     python3 -m pip install -r odoo13/odoo-brasil-13.0/requirements.txt && rm -rf *.zip 
 
 RUN wget https://github.com/Code-137/odoo-apps/archive/refs/heads/13.0.zip && unzip 13.0.zip -d odoo13-apps && \
-    python3 -m pip install -r odoo13-apps/odoo-apps-13.0/requirements.txt && rm -rf *.zip 
+    python3 -m pip install --user -r odoo13-apps/odoo-apps-13.0/requirements.txt && rm -rf *.zip 
 
 COPY ./odoo.conf /etc/odoo/
