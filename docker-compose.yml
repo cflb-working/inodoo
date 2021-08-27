@@ -4,13 +4,14 @@ services:
 
     # Subindo stancia odoo
     odoo-server:
-        image: cleytonflb/inodoo130:0.2
+        #build: .
+        image: cleytonflb/inodoo130:0.4
         ports:
             - 80:8069
         depends_on: 
             - db_principal
         environment: 
-            - HOST=db_principal
+            - DB_HOST="172.18.0.2"
             - USER=postgres_user
             - PASSWORD=postgres_password
         links: 
