@@ -12,9 +12,9 @@ RUN apt-get update && \
 
 # REMOVENDO LINK PYTHON2
 RUN rm -rf /usr/bin/python && ln -s /usr/bin/python3 /usr/bin/python
-#RUN python3 -m pip install --user iugu mercadopago==1.1.1
 
 USER odoo
+RUN python3 -m pip install iugu mercadopago==1.1.1
 WORKDIR /opt/odoo
 RUN wget https://github.com/Code-137/odoo-brasil/archive/refs/heads/13.0.zip
 RUN unzip 13.0.zip -d odoo13
